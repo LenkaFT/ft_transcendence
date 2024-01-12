@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "./src/public/",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "module": "commonjs",
+    "target": "es5",
+    "jsx": "react",
+    "resolveJsonModule": true,
+    "skipLibCheck" : true,
+    "esModuleInterop": true
+  },
+  "include" : [
+      "./src/**/*"
+  ],
+  "exclude" : [
+      "./test/**/*"
+  ]
+}

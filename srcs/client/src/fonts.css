@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Goma';
+
+    src: url('../public/fonts/gomarice_goma_block.ttf')
+}
+
+@font-face {
+    font-family: 'Russo';
+
+    src: url('../public/fonts/Russo/RussoOne-Regular.ttf')
+}
+
+.goma {
+    font-family: 'Russo';
+    font-weight: 'normal';
+    letter-spacing: '1.5';
+}
+
+.bionic {
+    font-family: 'Bionic';
+}

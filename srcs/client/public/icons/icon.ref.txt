@@ -1,0 +1,19 @@
+paddle : 
+
+<a target="_blank" href="https://icons8.com/icon/9662/ping-pong">Ping Pong</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+mute : 
+
+<a target="_blank" href="https://icons8.com/icon/644/mute">Mute</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+sword :
+
+<a target="_blank" href="https://icons8.com/icon/5336/sword">Sword</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+shield :
+
+<a target="_blank" href="https://icons8.com/icon/10498/shield">Shield</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+Crown : 
+
+<a target="_blank" href="https://icons8.com/icon/12566/crown">Crown</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>

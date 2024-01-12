@@ -1,0 +1,72 @@
+version: '3.8'
+
+networks:
+  transcendence:
+    name: transcendence
+    driver: bridge
+
+services:
+
+  client:
+    container_name: client
+    build:
+      context: ./client
+      args:
+        CLIENT_PORT: ${CLIENT_PORT}
+        SERVER_URL: ${SERVER_URL}
+    depends_on: 
+      - server
+    ports:
+      - ${CLIENT_PORT}:${CLIENT_PORT}
+    env_file:
+      - ./.env
+    # volumes:
+    #   - ./client:/usr/src/client
+    restart: unless-stopped
+
+  server:
+    container_name: server
+    networks:
+      - transcendence
+    build:
+      context: ./server
+      args:
+        SERVER_PORT: ${SERVER_PORT}
+    ports:
+      - ${SERVER_PORT}:${SERVER_PORT}
+    env_file:
+      - ./.env
+    # volumes:
+    #   - ./server:/usr/src/app
+    restart: unless-stopped
+
+  database:
+    container_name: database
+    networks:
+      - transcendence
+    image: postgres
+    environment:
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
+      PGDATA: ${PGDATA}
+    volumes:
+      - database-volume:${PGDATA}
+    restart: unless-stopped
+
+  adminer:
+    container_name: adminer
+    image: adminer
+    restart: always
+    depends_on: 
+      - database
+    environment:
+      ADMINER_DEFAULT_SERVER: database
+    ports:
+      - 8080:8080
+    networks:
+      - transcendence
+
+volumes:
+  database-volume:
+    driver: local
